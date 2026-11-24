@@ -5,6 +5,7 @@ using namespace std;
 const int LINHAS = 6;
 const int COLUNAS = 9;
 
+void preencheTabuleiro(string arr[LINHAS][COLUNAS]);
 void mostraTabuleiro(string arr[LINHAS][COLUNAS]);
 int pedePecaJogador();
 bool colocaPecaTabuleiro(string peca, int coluna, string arr[LINHAS][COLUNAS]);
@@ -18,6 +19,8 @@ int main() {
     int colunaJogar = 0;
     bool jogou = false;
 
+    preencheTabuleiro(tabuleiro);
+
     do {
         mostraTabuleiro(tabuleiro);
         colunaJogar = pedePecaJogador();
@@ -30,12 +33,31 @@ int main() {
 
     return 0;
 }
+/*cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";
+cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";
+cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";
+cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";
+cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";
+cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";
+cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";
+cout << "|"<< "|" << "|" << "|" << "|" << "|" << "|" << "|" << "\n";*/
+
+void preencheTabuleiro(string arr[LINHAS][COLUNAS]) {
+    for (int i=0; i<LINHAS; i++){
+        for (int j=0; j<COLUNAS; j++) {
+            arr[i][j] = " ";
+        }
+    }
+}
 
 void mostraTabuleiro(string arr[LINHAS][COLUNAS]) {
     /*cout << "Linha 1: Coluna 2: -" << arr[0] [1] << "-";
     arr[0][1] = "a";*/
 }
 int pedePecaJogador() {
+    int col;
+    cout << "Em que coluna quer jogar : ";
+    cin >> col;
     return 0;
 }
 bool colocaPecaTabuleiro(string peca, int coluna, string arr[LINHAS][COLUNAS]) {
